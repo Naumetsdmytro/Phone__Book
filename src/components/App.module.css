@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 130px;
+  padding-bottom: 40px;
+}
+
+.phoneContainer {
+  background-color: snow;
+  padding: 25px;
+  border-radius: 7px;
+  min-width: 700px;
+  min-height: 600px;
+}
