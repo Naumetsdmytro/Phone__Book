@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
-axios.defaults.baseURL = 'https://6433f8731c5ed06c958b9e3a.mockapi.io/api/v1';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -20,7 +20,7 @@ export const addContact = createAsyncThunk(
   'contacts/addContact',
   async ({ name, number }, { rejectWithValue }) => {
     try {
-      const response = await axios.post('contacts', { name, number });
+      const response = await axios.post('/contacts', { name, number });
       Notiflix.Notify.success('New Contact was added!');
       return response.data;
     } catch (error) {
@@ -31,9 +31,9 @@ export const addContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async (taskId, { rejectWithValue }) => {
+  async (contactId, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`contacts/${taskId}`);
+      const response = await axios.delete(`contacts/${contactId}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

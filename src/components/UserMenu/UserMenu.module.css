@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.buttonLogOut {
+  padding: 9px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 3px;
+  transition: background-color 200ms linear, color 200ms linear;
+  margin-left: 15px;
+}
+
+.buttonLogOut:hover {
+  background-color: #b90e0a;
+  color: white;
+}

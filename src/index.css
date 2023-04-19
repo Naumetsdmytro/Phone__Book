@@ -7,12 +7,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
     url(./images/backgroundImg.jpg);
-  background-size: cover;
+  background-size: cover; */
 }
 
 code {
@@ -39,4 +39,8 @@ img {
   max-width: 100%;
   display: block;
   height: auto;
+}
+
+a.active {
+  color: red;
 }
