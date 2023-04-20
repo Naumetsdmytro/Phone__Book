@@ -8,7 +8,7 @@ export const ContactListItem = ({ contact: { name, number, id } }) => {
   return (
     <li className={style.contactListItem} key={id}>
       <p className={style.contactListText}>
-        {name}: {number}
+        {name} <span className={style.number}>{number}</span>
       </p>
       <ButtonDelete id={id} />
     </li>

@@ -10,8 +10,12 @@
 .contactListText {
   display: flex;
   justify-content: baseline;
-  font-size: 30px;
-  margin-right: 45px;
+  font-size: 28px;
+  margin-right: 47px;
+}
+
+.number {
+  margin-left: 25px;
 }
 
 .buttonDelete {
@@ -21,6 +25,7 @@
   font-weight: 700;
   font-size: 15px;
   border-radius: 3px;
+  background-color: rgb(255, 0, 0, 0.7);
   transition: background-color 200ms linear, color 200ms linear;
 }
 

@@ -18,21 +18,22 @@
 }
 
 .inputText {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .formInput {
-  width: 250px;
-  height: 27px;
+  width: 260px;
+  height: 29px;
   outline: none;
   padding-left: 7px;
-  border: 1.9px solid gray;
+  border: 2px solid rgba(47, 47, 244, 0.4);
   border-radius: 4px;
 }
 
 .formInput:focus {
-  border: 1.7px solid black;
+  border: 2px solid #1e90ff;
 }
 
 .formBtn {
@@ -42,6 +43,7 @@
   font-weight: 700;
   font-size: 15px;
   border-radius: 3px;
+  background-color: rgba(47, 47, 244, 0.2);
   transition: background-color 200ms linear, color 200ms linear;
   max-height: 37px;
 }

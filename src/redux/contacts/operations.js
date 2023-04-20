@@ -21,7 +21,9 @@ export const addContact = createAsyncThunk(
   async ({ name, number }, { rejectWithValue }) => {
     try {
       const response = await axios.post('/contacts', { name, number });
-      Notiflix.Notify.success('New Contact was added!');
+      Notiflix.Notify.success('New Contact was added!', {
+        timeout: 2500,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -34,6 +36,9 @@ export const deleteContact = createAsyncThunk(
   async (contactId, { rejectWithValue }) => {
     try {
       const response = await axios.delete(`contacts/${contactId}`);
+      Notiflix.Notify.info('The contact was deleted!', {
+        timeout: 2500,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

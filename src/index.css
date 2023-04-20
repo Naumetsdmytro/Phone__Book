@@ -41,6 +41,14 @@ img {
   height: auto;
 }
 
+a {
+  font-weight: 550;
+}
+
+main {
+  padding: 0 15px;
+}
+
 a.active {
   color: red;
 }
