@@ -17,7 +17,7 @@ export const register = createAsyncThunk(
       setAutorizationHeader(data.token);
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -30,7 +30,7 @@ export const login = createAsyncThunk(
       setAutorizationHeader(data.token);
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -42,7 +42,7 @@ export const logout = createAsyncThunk(
       await axios.post('/users/logout');
       clearAutorizationHeader();
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -53,15 +53,15 @@ export const refreshUser = createAsyncThunk(
     const state = getState();
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      rejectWithValue('Unable to fetch user :(');
+    if (!persistedToken) {
+      return rejectWithValue('Unable to fetch user!');
     }
     try {
       setAutorizationHeader(persistedToken);
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );

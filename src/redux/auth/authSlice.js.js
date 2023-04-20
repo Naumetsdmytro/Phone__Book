@@ -11,7 +11,8 @@ const authSlice = createSlice({
     isLoggedIn: false,
     isRefreshing: false,
     token: null,
-    error: null,
+    errorLogIn: null,
+    errorRegister: null,
   },
   extraReducers: builder => {
     builder
@@ -21,7 +22,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(register.rejected, (state, action) => {
-        state.error = action.payload;
+        state.errorRegister = action.payload;
         state.isLoggedIn = false;
       })
       .addCase(login.fulfilled, (state, action) => {
@@ -30,16 +31,13 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(login.rejected, (state, action) => {
-        state.error = action.payload;
+        state.errorLogIn = action.payload;
         state.isLoggedIn = false;
       })
       .addCase(logout.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = null;
-      })
-      .addCase(logout.rejected, (state, action) => {
-        state.error = action.payload;
       })
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
@@ -51,7 +49,6 @@ const authSlice = createSlice({
       })
       .addCase(refreshUser.rejected, (state, action) => {
         state.isRefreshing = false;
-        state.error = action.payload;
       });
   },
 });
