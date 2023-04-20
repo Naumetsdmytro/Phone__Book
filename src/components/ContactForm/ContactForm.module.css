@@ -5,7 +5,7 @@
 }
 
 .contactForm {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   display: flex;
   align-items: flex-end;
 }
@@ -28,8 +28,8 @@
   height: 29px;
   outline: none;
   padding-left: 7px;
-  border: 2px solid rgba(47, 47, 244, 0.4);
-  border-radius: 4px;
+  border: 2px solid rgba(47, 47, 244, 0.5);
+  border-radius: 5px;
 }
 
 .formInput:focus {

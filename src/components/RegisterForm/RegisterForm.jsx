@@ -41,7 +41,11 @@ export const RegisterForm = () => {
           Register
         </button>
       </form>
-      {error && <p>User with this email has already logged in!</p>}
+      {error && (
+        <p className={styles.errorMessage}>
+          User with this email has already logged in :)
+        </p>
+      )}
     </>
   );
 };

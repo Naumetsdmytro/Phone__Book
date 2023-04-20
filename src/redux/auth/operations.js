@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 const setAutorizationHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -17,6 +18,9 @@ export const register = createAsyncThunk(
       setAutorizationHeader(data.token);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure('User with this email is registered!', {
+        timeout: 3000,
+      });
       return rejectWithValue(error.message);
     }
   }
@@ -28,8 +32,12 @@ export const login = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/login', credentials);
       setAutorizationHeader(data.token);
+
       return data;
     } catch (error) {
+      Notiflix.Notify.failure('Your Email or Password is not correct!', {
+        timeout: 3000,
+      });
       return rejectWithValue(error.message);
     }
   }

@@ -36,7 +36,7 @@ export const LoginForm = () => {
       </form>
       {error && (
         <p className={styles.errorMessage}>
-          Your email or password is not correct! Please, try again.
+          Your email or password is not correct! Please, try again :(
         </p>
       )}
     </>
