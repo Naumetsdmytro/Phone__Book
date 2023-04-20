@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[493],{493:function(e,r,t){t.r(r),t.d(r,{default:function(){return o}});var n=t(184);function o(){return(0,n.jsx)("div",{children:(0,n.jsx)("h2",{children:"The Home page is in progress))) We do everything to surprise you!!!"})})}}}]);
+//# sourceMappingURL=493.68d2f5fe.chunk.js.map
